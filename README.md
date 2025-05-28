@@ -16,4 +16,5 @@
 
 2) Deploy custom initiative
 
-  2.1) 
+  2.1) Use policy 'Inherit a tag from the resource group'
+https://www.azadvertizer.net/azpolicyadvertizer/cd3aa116-8754-49c9-a813-ad46512ece54.html
