@@ -1,7 +1,11 @@
 targetScope = 'subscription'
 
+@description('Location for the policy assignment')
+param location string = 'westeurope'
+
 resource mcsb 'Microsoft.Authorization/policyAssignments@2022-06-01' = {
   name: 'mcsb-default'
+  location: location
   identity: {
     type: 'SystemAssigned'
   }
