@@ -1,18 +1,12 @@
-@description('Target subscription ID for policy assignment')
-param subscriptionId string
+targetScope = 'subscription'
 
-resource mcsecbenchAssignment 'Microsoft.Authorization/policyAssignments@2021-06-01' = {
-  name: 'mcsecbench-assignment'
-  scope: subscription(subscriptionId)
+resource mcsb 'Microsoft.Authorization/policyAssignments@2022-06-01' = {
+  name: 'mcsb-default'
+  identity: {
+    type: 'SystemAssigned'
+  }
   properties: {
     displayName: 'Microsoft Cloud Security Benchmark'
-    description: 'Assigns the built-in Microsoft Cloud Security Benchmark initiative'
-    policyDefinitionId: '/providers/Microsoft.Authorization/policySetDefinitions/3f3679d2-13d6-48bd-8f07-6ffb84b2b1f4'
-    enforcementMode: 'Default'
+    policyDefinitionId: '/providers/Microsoft.Authorization/policySetDefinitions/1f3afdf9-d0c9-4c3d-847f-89da613e70a8'
   }
 }
-
-
-
-
-
