@@ -1,8 +1,6 @@
-# azure-governance
-Azure policy and tagging deployment via Bicep
+Deploy assignments to management groups
 
-Deploy using the Azure CLI:
-1) Download the Bicep file
+1) Open Azure Bash and download the Bicep file
 
 curl -O https://raw.githubusercontent.com/Trimatolod/azure-governance/main/assign-microsoft-cloud-security-benchmark.bicep
 
@@ -10,8 +8,7 @@ curl -O https://raw.githubusercontent.com/Trimatolod/azure-governance/main/assig
 
 az deployment mg create \
   --name assignMCSB \
-  --management-group-id governance \
+  --management-group-id <management-group-name> \  # Replace with actual Management Group name
   --location switzerlandnorth \
   --template-file assign-microsoft-cloud-security-benchmark.bicep \
   --parameters location='switzerlandnorth'
-
