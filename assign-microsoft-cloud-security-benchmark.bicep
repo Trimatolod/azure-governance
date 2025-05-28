@@ -1,7 +1,10 @@
 targetScope = 'managementGroup'
 
+param location string = 'switzerlandnorth'
+
 resource mcsb 'Microsoft.Authorization/policyAssignments@2022-06-01' = {
   name: 'mcsb-default'
+  location: location
   identity: {
     type: 'SystemAssigned'
   }
