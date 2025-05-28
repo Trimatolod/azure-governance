@@ -1,5 +1,14 @@
 1) Deploy the Microsoft Cloud Security Benchmark to Management Groups
 
+Option 1: Assign initiatve (not working)
+   az policy assignment create \
+  --name "mcsb-default" \
+  --scope "/providers/Microsoft.Management/managementGroups/your-management-group-id" \
+  --policy-set-definition "/providers/Microsoft.Authorization/policySetDefinitions/1f3afdf9-d0c9-4c3d-847f-89da613e70a8" \
+  --location "switzerlandnorth"
+
+Option 2: With Bicep file
+
   1.1) Open Azure Bash and download the Bicep file
 
   curl -O https://raw.githubusercontent.com/Trimatolod/azure-governance/main/assign-microsoft-cloud-security-benchmark.bicep
@@ -16,5 +25,7 @@
 
 2) Deploy custom initiative
 
-  2.1) Use policy 'Inherit a tag from the resource group'
+  2.1) Use policies
+  'Inherit a tag from the resource group'
 https://www.azadvertizer.net/azpolicyadvertizer/cd3aa116-8754-49c9-a813-ad46512ece54.html
+
