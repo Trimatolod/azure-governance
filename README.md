@@ -9,7 +9,7 @@ Option 1: Assign initiatve (not working)
 
 Option 2: With Bicep file
 
-  1.1) Open Azure Bash and download the Bicep file
+  1.1) Open Azure CLI and download the Bicep file
 
   curl -O https://raw.githubusercontent.com/Trimatolod/azure-governance/main/assign-microsoft-cloud-security-benchmark.bicep
 
